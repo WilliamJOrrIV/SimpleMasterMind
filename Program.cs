@@ -4,6 +4,7 @@ Console.WriteLine("Hello, World!");
 Console.WriteLine("Welcome To MasterMind! Please enter a 4 Digit number with each digit between 1-6! You will have 10 guess to get my number!");
 
 var random = new Random();
+var gameWon = false;
 
 //We will store in array to easily compare the position of each int entered to correct answer position
 var correctAnswer = new List<string>();
@@ -51,8 +52,14 @@ for(int i = 0; i < 10; i++)
     if(printCorrect == "++++")
     {
         Console.WriteLine("YOU HAVE GUESSED THE CORRECT NUMBER!");
+        gameWon = true;
         break;
     }
 
     Console.WriteLine(printCorrect);
+}
+
+if(!gameWon) 
+{
+   Console.WriteLine("You have failed to guess in 10 tries! Game Over");
 }
